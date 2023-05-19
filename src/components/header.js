@@ -5,9 +5,9 @@ import Selector from './gameSelector'
 const headFun = (props)=>{
     return(
         <div className="headerClass">
-            <div><Selector /></div>
-            <div><a href='/'>Find Wally Game!</a></div>
-            <div> <a href='/about'>About</a></div>
+            <div id="selectingGame"><Selector /></div>
+            <div id="toMainPage"><a href='/'>Find Wally Game!</a></div>
+            <div id="toAboutPage"> <a href='/about'>About</a></div>
         </div>
     );
 };
