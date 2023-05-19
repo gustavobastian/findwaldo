@@ -4,7 +4,8 @@ import '../styles/gameClass.css'
 const gameFun = (props)=>{
     return(
         <div className="gameClass">
-          asd
+          <img className="imageBody" src={require("../images/img1.webp")} alt="not found">           
+           </img>
         </div>
     );
 };
