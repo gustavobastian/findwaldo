@@ -10,7 +10,7 @@ function About() {
             <div className='referenceTitle'>About me:</div>
             <p id='firsP' className='pAbout'>I am an Electronic Engineer with good background in web technologies.</p>
             <p id='secondP' className='pAbout'>This app is part of the javascripth path of the Odin Project.</p>
-            <p id='secondP' className='pAbout'>Current status: in develpment.</p>
+            <p id='secondP' className='pAbout'>Current status: under development.</p>
         
             <div className='referenceTitle'>Images used in this project:</div>
             <div id='reference_1' className='itemReference'>
