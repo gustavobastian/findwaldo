@@ -27,11 +27,17 @@
     flex-direction: column;
     width: 100%;
     padding:20px;
-    overflow: scroll;
+ 
 }
 
 @media screen and (max-width: 420px) {
     .About{
         height: 200vh;
     }
+}
+
+.referenceTitle{
+    color: gray;
+    font-size: 20px;
+    font-weight: bold;
 }

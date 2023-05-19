@@ -7,11 +7,11 @@ function About() {
       <Header/>
       <div className="About">
         <div id="innerAbout" className='innerAbout'>
-            <div className='aboutTitle'>About me:</div>
+            <div className='referenceTitle'>About me:</div>
             <p id='firsP' className='pAbout'>I am an Electronic Engineer with good background in web technologies.</p>
             <p id='secondP' className='pAbout'>This app is part of the javascripth path of the Odin Project.</p>
         
-
+            <div className='referenceTitle'>Images used in this project:</div>
             <div id='reference_1' className='itemReference'>
                 <div className='aboutTitle'>
                     <p id='firsR' className='pAbout'>App Icon:<a href='https://icon-library.com/3014281.html'>https://icon-library.com/3014281.html</a></p>                

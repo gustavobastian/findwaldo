@@ -14,9 +14,9 @@ const Selector = (props)=>{
 
     return(
         <div>
-            <label for="select">Game:</label>            
-            <select className="gameSelector" name="select" onChange={(e)=>{updateState(e.target.value);}}>
-                <option value="1" selected>Game 1</option>
+            <label id="labelGame" htmlFor="select">Game:</label>            
+            <select id="gameSelector" className="gameSelector" name="select" defaultValue={props.value} onChange={(e)=>{updateState(e.target.value);}}>
+                <option value="1">Game 1</option>
                 <option value="2">Game 2</option>
                 <option value="3">Game 3</option>
             </select>

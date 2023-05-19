@@ -7,7 +7,7 @@ function About() {
       <Header/>
       <div className="About">
         <div className='innerAbout'>
-            <div className='aboutTitle'>PAGE NOT FOUND</div>           
+            <div className='aboutTitle' id="pageNotFound">PAGE NOT FOUND</div>           
         </div>
       </div>
       <Footer/>

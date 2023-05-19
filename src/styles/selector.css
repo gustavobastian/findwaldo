@@ -1,6 +1,8 @@
-*{
-    color:white;
-}
+
 .gameSelector{
     margin-left:10px;
+    background: gold;
+    color:black;
+    font-weight: bold;
+    font-size: 22px;
 }

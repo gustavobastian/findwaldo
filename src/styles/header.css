@@ -1,5 +1,6 @@
 .headerClass{
-    height: 10vh;
+    height: max(10vh,35px);
+    width: 100%;
     background: black;
     color: white;
     display: grid;
@@ -11,4 +12,8 @@
     align-items: center;
     font-size: 25px;
     font-weight: bold;
+}
+.aHeader{
+    text-decoration: none;
+    color:white;
 }
