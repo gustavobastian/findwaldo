@@ -1,8 +1,5 @@
 import React  from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HeadFun from './components/header'
-import FooterFun from './components/footer'
-import GameFun from './components/gameBody'
 import Main from './pages/main'
 import About from './pages/about'
 import Error from './pages/errorPage'
