@@ -3,8 +3,7 @@ import '../styles/gameClass.css'
 import { useState,useReducer } from 'react';
 
 const GameFun = (props)=>{
-
-    const [state,setState]= useState(false,false,false);
+   
     const [state2,setState2]= useState([
         1,
         1,
@@ -39,7 +38,7 @@ const GameFun = (props)=>{
         
         if((Math.abs(currentPosition[0]-positions[1].x)<10)&&(Math.abs(currentPosition[1]-positions[1].y)<10)){
             console.log(" 2 ok")
-            ///setState(state[0],true,state[2])
+
             setState2([
                 state2[0],
                 0.5,
@@ -52,7 +51,7 @@ const GameFun = (props)=>{
         
         if((Math.abs(currentPosition[0]-positions[2].x)<10)&&(Math.abs(currentPosition[1]-positions[2].y)<10)){
             console.log(" 3 ok")
-            //setState(state[0],state[1],true)
+
             setState2([
                 state2[0],
                 state2[1],
@@ -62,7 +61,7 @@ const GameFun = (props)=>{
             
         }
     }
-    /*style={{opacity: state2[1]}} */
+
     return(
         <div className="gameClass">
           <img className="imageBody" src={require("../images/img"+(parseInt(props.value))+".webp")} alt="not found" onClick={(e)=>{getPoint(e);}}>           

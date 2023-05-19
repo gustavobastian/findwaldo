@@ -1,14 +1,13 @@
 import React from "react";
 import '../styles/selector.css'
-import { useState } from "react";
+
 
 const Selector = (props)=>{
-
-    const [state,setState]=useState(2)
-
+    
 
     const updateState= (value)=>{        
-        props.setCurrentGame(value);        
+        props.setCurrentGame(value);   
+        
     };
 
 
