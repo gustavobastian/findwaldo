@@ -1,0 +1,12 @@
+.footerClass{
+    height: 10vh;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: auto;
+}

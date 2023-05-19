@@ -1,0 +1,10 @@
+.gameClass{
+    height: 80vh;
+    background: rgb(245, 226, 226);
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+}

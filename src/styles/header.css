@@ -1,0 +1,11 @@
+.headerClass{
+    height: 10vh;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+}
