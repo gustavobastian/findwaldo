@@ -2,7 +2,10 @@
     height: 10vh;
     background: black;
     color: white;
-    display: flex;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 100%;
+    
     justify-content: center;
     text-align: center;
     align-items: center;
