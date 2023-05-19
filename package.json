@@ -4,14 +4,14 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gustavobastian/findWaldo"
+    "url": "git+https://github.com/gustavobastian/findwaldo"
   },
   "author": "Gustavo Bastian",
   "license": "GPL",
   "bugs": {
-    "url": "https://github.com/gustavobastian/findWaldo/issues"
+    "url": "https://github.com/gustavobastian/findwaldo/issues"
   },
-  "homepage": "https://gustavobastian.github.io/findWaldo",
+  "homepage": "https://gustavobastian.github.io/findwaldo/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -23,13 +23,16 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "gh-pages": "^5.0.0"
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
