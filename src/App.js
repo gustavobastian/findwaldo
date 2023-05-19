@@ -18,8 +18,9 @@ function App() {
   
   return (
     <BrowserRouter>      
-    <Routes>       
+    <Routes>           
     <Route path="/" element={<Main valueCurrent={currentGame} setCurrentGame={(e)=>setCurrentGameLocal(e)}/>} />
+    <Route path="/home" element={<Main valueCurrent={currentGame} setCurrentGame={(e)=>setCurrentGameLocal(e)}/>} />    
     <Route path="/about" element={<About />} />
     <Route path="/*" element={<Error />} />
     </Routes>  
