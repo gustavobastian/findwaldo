@@ -22,6 +22,9 @@ function About() {
                 <div className='aboutTitle'>
                     <p id='firsR' className='pAbout'>Img 2:<a href='https://wallpapers.com/wallpapers/where-s-waldo-crowded-ship-d72fdlc30qu2viu1.html'>tide777 on Wallpapers.com</a></p>                
                 </div>
+                <div className='aboutTitle'>
+                    <p id='firsR' className='pAbout'>Img 3:<a href='https://wallpapers.com/wallpapers/where-s-waldo-fishing-boats-ivl4gypxwu6ie0dm.html'>tanyuschastreha on Wallpapers.com</a></p>                
+                </div>
             </div>
         
         </div>
