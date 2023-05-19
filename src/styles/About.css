@@ -1,0 +1,37 @@
+.About{
+    height: 90vh;    
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background: white;
+    padding-top:10%;
+}
+
+.innerAbout{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    color:black!important;
+    font-weight: bold;
+}
+.pAbout{
+    color:black!important;    
+}
+
+
+.itemReference{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    padding:20px;
+    overflow: scroll;
+}
+
+@media screen and (max-width: 420px) {
+    .About{
+        height: 200vh;
+    }
+}
