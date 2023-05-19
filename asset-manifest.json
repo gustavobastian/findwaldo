@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/findWaldo/static/css/main.687bf757.css",
+    "main.js": "/findWaldo/static/js/main.ff1525e4.js",
+    "static/media/img2.webp": "/findWaldo/static/media/img2.a8fc13d33a10ad4f9cd1.webp",
+    "static/media/img3.webp": "/findWaldo/static/media/img3.13fc686e46d7aa20b94c.webp",
+    "static/media/img1.webp": "/findWaldo/static/media/img1.e9e50298e4082e82729f.webp",
+    "static/media/icon1.png": "/findWaldo/static/media/icon1.36874afbc43e3aec0f12.png",
+    "index.html": "/findWaldo/index.html",
+    "main.687bf757.css.map": "/findWaldo/static/css/main.687bf757.css.map",
+    "main.ff1525e4.js.map": "/findWaldo/static/js/main.ff1525e4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.687bf757.css",
+    "static/js/main.ff1525e4.js"
+  ]
+}
