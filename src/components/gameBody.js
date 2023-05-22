@@ -15,6 +15,13 @@ const GameFun = (props)=>{
         1,
         1,           
     ]);
+
+    const [position,setposition]=useState(
+        {
+            'x':0,
+            'y':0,
+        })
+
     const [ignored,forceupdate]=useReducer(x=>x+1,0);
     /**only for dev, image 1 */
     const positions=[
@@ -29,12 +36,18 @@ const GameFun = (props)=>{
         let currentPosition=[e.clientX,e.clientY]
         console.log("state:"+JSON.stringify(state2))
         console.log("state:"+JSON.stringify(state2[0]))
+
+        setposition({
+            'x':currentPosition[0],
+            'y':currentPosition[1],
+        })
+
         setSelectorState({
             'x':currentPosition[0],
             'y':currentPosition[1],
             'hidden':false
         })
-        
+        /*
         if((Math.abs(currentPosition[0]-positions[0].x)<10)&&(Math.abs(currentPosition[1]-positions[0].y)<10)){
             console.log("1 ok")
             setState2([
@@ -67,13 +80,20 @@ const GameFun = (props)=>{
                 state2[1],
                 0.5,                         
             ])        
-            forceupdate();     
             
-        }
+            
+        }*/
+        forceupdate();     
     }
 
     const getObjetive=(e)=>{
         console.log("selected:"+e)
+        console.log("position:"+JSON.stringify(position));
+        setSelectorState({
+            'x':0,
+            'y':0,
+            'hidden':true,
+        });
     }
 
     return(
