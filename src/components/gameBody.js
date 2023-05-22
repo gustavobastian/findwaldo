@@ -6,11 +6,14 @@ import Clock from './clock';
 
 const GameFun = (props)=>{
     
+    const [begin,setBegin]=useState(false);
+    
     const [selectorState, setSelectorState]= useState({ //state for saving where is needed to show the objetive selector
         'x':0,
         'y':0,
         'hidden':true,
     });
+
    
     const [state2,setState2]= useState([    //state for change of opacity of found characters
         1,
@@ -100,7 +103,10 @@ const GameFun = (props)=>{
             window.alert("3 ok")
             if((state2[0]===0.5)&&(state2[1]===0.5))
             {
-                window.alert("game finished!  time: ")
+                setBegin(true);
+                forceupdate();
+                window.alert("game finished!  time: ")                
+                console.log("finishing")                
             }
 
             setState2([
@@ -113,12 +119,22 @@ const GameFun = (props)=>{
         forceupdate(); 
     }
 
+    const getTime=(e)=>{
+        console.log(JSON.stringify(e));
+    }
+
+    const start=()=>{
+        setBegin(true);
+        console.log("Here")
+        forceupdate();
+    }
     return(
         <div className="gameClass">
           <img className="imageBody" src={require("../images/img"+(parseInt(props.value))+".webp")} alt="not found" onClick={(e)=>{getPoint(e);}}>                     
            </img>
            <ObjetiveSelector value={{selectorState}} getObjetive={(e)=>{getObjetive(e)}} />
-           <Clock />
+           <Clock value={begin}  getTime={(e)=>getTime(e)}/>
+           <button className="buttonStart" onClick={start}>Start</button>
            <div className='objetives'>
                 <div className="targetName">Objetive 1</div>
                 <div className="objetive"  style={{opacity: state2[0]}}>                

@@ -4,6 +4,10 @@ import { useState,useReducer,useEffect } from "react";
 
 
 const Clock = (props)=>{    
+    console.log(props.value)
+
+    const [running, setRunning]=useState(false);
+
     const [time,setTime]=useState({
             'hour':0,
             'minute':0,
@@ -33,11 +37,26 @@ const Clock = (props)=>{
         })        
         forceupdate();
     }
+    useEffect(()=>  {        
+        if(props.value===true){
+            setRunning(true);
+        }
+        else{
+        /*    props.getTime(time);*/
 
-    useEffect(() => {
-        const interval = setInterval(() => update(), 1000);        
-        return () => clearInterval(interval);
-      }, [time]);
+            setTime({
+                'hour':0,
+                'minute':0,
+                'seconds':0,
+            })        
+        }
+        
+        if(running===true){
+            const interval = setInterval(() => update(), 1000);        
+            return () => clearInterval(interval);
+        }
+        forceupdate();
+    },[props.value,time]);
 
     return (
         <div className="clockViewer"> {time.hour}:{time.minute}:{time.seconds} </div>
