@@ -2,6 +2,7 @@ import React  from 'react';
 import '../styles/gameClass.css'
 import ObjetiveSelector from './objetiveSelector';
 import { useState,useReducer } from 'react';
+import Clock from './clock';
 
 const GameFun = (props)=>{
     
@@ -117,6 +118,7 @@ const GameFun = (props)=>{
           <img className="imageBody" src={require("../images/img"+(parseInt(props.value))+".webp")} alt="not found" onClick={(e)=>{getPoint(e);}}>                     
            </img>
            <ObjetiveSelector value={{selectorState}} getObjetive={(e)=>{getObjetive(e)}} />
+           <Clock />
            <div className='objetives'>
                 <div className="targetName">Objetive 1</div>
                 <div className="objetive"  style={{opacity: state2[0]}}>                

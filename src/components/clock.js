@@ -1,0 +1,47 @@
+import React from "react";
+import '../styles/clock.css'
+import { useState,useReducer,useEffect } from "react";
+
+
+const Clock = (props)=>{    
+    const [time,setTime]=useState({
+            'hour':0,
+            'minute':0,
+            'seconds':0,
+    })
+    const [ignored,forceupdate]=useReducer(x=>x+1,0); //reducer for refreshing after events
+
+    const update=()=>{
+        let localhour=parseInt(time.hour);
+        let localminute=parseInt(time.minute);
+        let localsecond=parseInt(time.seconds);
+        localsecond++;
+        if(localsecond===60){
+            localsecond=0;
+            localminute++;
+        }
+        if(localminute===60){
+            localminute=0;
+            localhour++;
+        }
+
+
+        setTime({
+            'hour':localhour,
+            'minute':localminute,
+            'seconds':localsecond,
+        })        
+        forceupdate();
+    }
+
+    useEffect(() => {
+        const interval = setInterval(() => update(), 1000);        
+        return () => clearInterval(interval);
+      }, [time]);
+
+    return (
+        <div className="clockViewer"> {time.hour}:{time.minute}:{time.seconds} </div>
+        )
+}
+
+export default Clock;
