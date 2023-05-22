@@ -4,28 +4,30 @@ import ObjetiveSelector from './objetiveSelector';
 import { useState,useReducer } from 'react';
 
 const GameFun = (props)=>{
-    const [selectorState, setSelectorState]= useState({
+    
+    const [selectorState, setSelectorState]= useState({ //state for saving where is needed to show the objetive selector
         'x':0,
         'y':0,
         'hidden':true,
     });
    
-    const [state2,setState2]= useState([
+    const [state2,setState2]= useState([    //state for change of opacity of found characters
         1,
         1,
         1,           
     ]);
 
-    const [position,setposition]=useState(
+    const [position,setposition]=useState( //state for saving the current position
         {
             'x':0,
             'y':0,
         })
 
-    const [ignored,forceupdate]=useReducer(x=>x+1,0);
+    const [ignored,forceupdate]=useReducer(x=>x+1,0); //reducer for refreshing after events
+
     /**only for dev, image 1 */
     const positions=[
-        {"x":189 ,"y":185},        
+        {"x":187 ,"y":182},        
         {"x":302 ,"y":298},
         {"x":120 ,"y":62},
     ]
@@ -34,8 +36,6 @@ const GameFun = (props)=>{
         if(!e){return;}
         
         let currentPosition=[e.clientX,e.clientY]
-        console.log("state:"+JSON.stringify(state2))
-        console.log("state:"+JSON.stringify(state2[0]))
 
         setposition({
             'x':currentPosition[0],
@@ -47,20 +47,43 @@ const GameFun = (props)=>{
             'y':currentPosition[1],
             'hidden':false
         })
-        /*
-        if((Math.abs(currentPosition[0]-positions[0].x)<10)&&(Math.abs(currentPosition[1]-positions[0].y)<10)){
-            console.log("1 ok")
+       
+        forceupdate();     
+    }
+/**
+ * Function that checks if the objetive is in the place clicked
+ * @param {number} e : objetive indication
+ */
+    const getObjetive=(e)=>{
+        
+        setSelectorState({
+            'x':0,
+            'y':0,
+            'hidden':true,
+        });
+         
+        if(((Math.abs(position.x-positions[0].x)<10)&&(Math.abs(position.y-positions[0].y)<10))&&(e==='1')){            
+            window.alert("1 ok")
+            if((state2[2]===0.5)&&(state2[1]===0.5))
+            {
+                window.alert("game finished!  time: ")
+            }
+
             setState2([
                 0.5,
                 state2[1],
                 state2[2],                         
             ])        
-            forceupdate(); 
+            
             
         }
         
-        if((Math.abs(currentPosition[0]-positions[1].x)<10)&&(Math.abs(currentPosition[1]-positions[1].y)<10)){
-            console.log(" 2 ok")
+        if(((Math.abs(position.x-positions[1].x)<10)&&(Math.abs(position.y-positions[1].y)<10))&&(e==='2')){            
+            window.alert("2 ok")
+            if((state2[0]===0.5)&&(state2[2]===0.5))
+            {
+                window.alert("game finished!  time: ")
+            }
 
             setState2([
                 state2[0],
@@ -72,28 +95,21 @@ const GameFun = (props)=>{
         
         }
         
-        if((Math.abs(currentPosition[0]-positions[2].x)<10)&&(Math.abs(currentPosition[1]-positions[2].y)<10)){
-            console.log(" 3 ok")
+        if(((Math.abs(position.x-positions[2].x)<10)&&(Math.abs(position.y-positions[2].y)<10))&&(e==='3')){            
+            window.alert("3 ok")
+            if((state2[0]===0.5)&&(state2[1]===0.5))
+            {
+                window.alert("game finished!  time: ")
+            }
 
             setState2([
                 state2[0],
                 state2[1],
                 0.5,                         
             ])        
-            
-            
-        }*/
-        forceupdate();     
-    }
-
-    const getObjetive=(e)=>{
-        console.log("selected:"+e)
-        console.log("position:"+JSON.stringify(position));
-        setSelectorState({
-            'x':0,
-            'y':0,
-            'hidden':true,
-        });
+        }
+        
+        forceupdate(); 
     }
 
     return(
