@@ -1,8 +1,14 @@
 import React  from 'react';
 import '../styles/gameClass.css'
+import ObjetiveSelector from './objetiveSelector';
 import { useState,useReducer } from 'react';
 
 const GameFun = (props)=>{
+    const [selectorState, setSelectorState]= useState({
+        'x':0,
+        'y':0,
+        'hidden':true,
+    });
    
     const [state2,setState2]= useState([
         1,
@@ -18,12 +24,16 @@ const GameFun = (props)=>{
     ]
 
     const getPoint= (e)=>{    
-        
         if(!e){return;}
         
         let currentPosition=[e.clientX,e.clientY]
         console.log("state:"+JSON.stringify(state2))
         console.log("state:"+JSON.stringify(state2[0]))
+        setSelectorState({
+            'x':currentPosition[0],
+            'y':currentPosition[1],
+            'hidden':false
+        })
         
         if((Math.abs(currentPosition[0]-positions[0].x)<10)&&(Math.abs(currentPosition[1]-positions[0].y)<10)){
             console.log("1 ok")
@@ -62,10 +72,15 @@ const GameFun = (props)=>{
         }
     }
 
+    const getObjetive=(e)=>{
+        console.log("selected:"+e)
+    }
+
     return(
         <div className="gameClass">
-          <img className="imageBody" src={require("../images/img"+(parseInt(props.value))+".webp")} alt="not found" onClick={(e)=>{getPoint(e);}}>           
+          <img className="imageBody" src={require("../images/img"+(parseInt(props.value))+".webp")} alt="not found" onClick={(e)=>{getPoint(e);}}>                     
            </img>
+           <ObjetiveSelector value={{selectorState}} getObjetive={(e)=>{getObjetive(e)}} />
            <div className='objetives'>
                 <div className="targetName">Objetive 1</div>
                 <div className="objetive"  style={{opacity: state2[0]}}>                
@@ -80,6 +95,7 @@ const GameFun = (props)=>{
                     <img  className="objetiveImage" src={require("../images/objetive"+(parseInt(props.value))+"/icon3.png")} alt="not found"></img>
                 </div>
            </div>
+           
         </div>
     );
 };

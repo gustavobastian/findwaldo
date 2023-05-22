@@ -1,0 +1,12 @@
+
+.objetiveSelector{
+    margin-left:60px;
+    background: rgb(224, 208, 118);
+    color:black;    
+    font-size: 10px;
+    position:absolute;    
+    width: 60px;
+}
+.optionObjetive{
+    font-size: 10px;
+}

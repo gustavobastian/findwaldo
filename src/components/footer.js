@@ -4,10 +4,10 @@ import '../styles/footer.css'
 const footerFun = (props)=>{
     return(
         <div className="footerClass">
-            <div className='line1'>
+            <div className='footerLine1'>
             Developed by: Gustavo Bastian (2023)
             </div>
-            <div className='line1'>
+            <div className='footerLine1'>
             
             </div>
         </div>
