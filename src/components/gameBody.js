@@ -41,6 +41,7 @@ const GameFun = (props)=>{
         if(!e){return;}
         
         let currentPosition=[e.clientX,e.clientY]
+        console.log("position x:"+e.clientX)
 
         setposition({
             'x':currentPosition[0],
@@ -66,7 +67,7 @@ const GameFun = (props)=>{
             'y':0,
             'hidden':true,
         });
-         
+         console.log("Position:"+position.x+" "+position.y)
         if(((Math.abs(position.x-positions[0].x)<10)&&(Math.abs(position.y-positions[0].y)<10))&&(e==='1')){            
             window.alert("1 ok")
             if((state2[2]===0.5)&&(state2[1]===0.5))
@@ -82,8 +83,6 @@ const GameFun = (props)=>{
                 state2[1],
                 state2[2],                         
             ])        
-            
-            
         }
         
         if(((Math.abs(position.x-positions[1].x)<10)&&(Math.abs(position.y-positions[1].y)<10))&&(e==='2')){            
@@ -93,8 +92,7 @@ const GameFun = (props)=>{
                 setBegin(false);
                 console.log("stoping clock")
                 forceupdate();  
-                window.alert("game finished!  time: "+timeFinished)                                
-                
+                window.alert("game finished!  time: "+timeFinished)                                                
             }
 
             setState2([
@@ -102,9 +100,6 @@ const GameFun = (props)=>{
                 0.5,
                 state2[2],                         
             ])        
-        
-            
-        
         }
         
         if(((Math.abs(position.x-positions[2].x)<10)&&(Math.abs(position.y-positions[2].y)<10))&&(e==='3')){            

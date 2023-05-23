@@ -17,9 +17,9 @@ const ObjetiveSelector = (props)=>{
     return(
         <div>
               {data.hidden === false ? (
-                    <select id="objetiveSelector"  className="objetiveSelector" style={{position:"absolute",top:data.y,left:data.x}} name="select" defaultValue={0} 
+                    <select id="objetiveSelector"  className="objetiveSelector" style={{position:"absolute",top:data.y-50,left:data.x}} name="select" defaultValue={0} 
                     onChange={(e)=>{updateState(e.target.value);}}>
-                        <option className="optionObjetive" value="0">None</option>
+                        <option className="optionObjetive" value="0"> </option>
                         <option className="optionObjetive" value="1">Objetive 1</option>
                         <option className="optionObjetive" value="2">Objetive 2</option>
                         <option className="optionObjetive" value="3">Objetive 3</option>

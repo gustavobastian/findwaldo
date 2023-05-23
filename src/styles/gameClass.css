@@ -1,13 +1,14 @@
 .gameClass{
-    height: 80vh;
+    height: 829*.8;
     background: white;    
     display: flex;
     flex-direction: row;        
     text-align: center;
     padding-left: 10px;
     margin-left:10px;
-    width: 1000px;
+    width: 1097px;
     justify-content: space-between;
+    position:relative;
 }
 .imageBody{
     width: auto;
