@@ -1,6 +1,5 @@
-import React from "react";
 import '../styles/objetiveSelector.css'
-import { useState,useReducer } from "react";
+import { React,useState,useReducer } from "react";
 
 
 const ObjetiveSelector = (props)=>{    

@@ -1,6 +1,5 @@
-import React from "react";
 import '../styles/clock.css'
-import { useState,useReducer,useEffect } from "react";
+import { React,useState,useReducer,useEffect } from "react";
 
 
 const Clock = (props)=>{    

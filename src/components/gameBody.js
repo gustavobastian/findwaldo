@@ -1,7 +1,6 @@
-import React  from 'react';
 import '../styles/gameClass.css'
 import ObjetiveSelector from './objetiveSelector';
-import { useState,useReducer } from 'react';
+import { React, useState,useReducer } from 'react';
 import Clock from './clock';
 
 const GameFun = (props)=>{

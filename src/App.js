@@ -1,9 +1,8 @@
-import React  from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from './pages/main'
 import About from './pages/about'
 import Error from './pages/errorPage'
-import { useState,useReducer } from 'react';
+import { React, useState,useReducer } from 'react';
 import './App.css';
 
 
