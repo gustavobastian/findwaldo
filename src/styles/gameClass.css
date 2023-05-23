@@ -45,3 +45,7 @@
     border-radius: 25px;
     height: 45px;
 }
+.buttonsClock{
+    display:flex;
+    flex-direction:column;
+}

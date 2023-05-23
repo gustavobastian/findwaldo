@@ -7,6 +7,7 @@ import Clock from './clock';
 const GameFun = (props)=>{
     
     const [begin,setBegin]=useState(false);
+    const [timeFinished,setTimeFinished]=useState("");
     
     const [selectorState, setSelectorState]= useState({ //state for saving where is needed to show the objetive selector
         'x':0,
@@ -70,7 +71,10 @@ const GameFun = (props)=>{
             window.alert("1 ok")
             if((state2[2]===0.5)&&(state2[1]===0.5))
             {
-                window.alert("game finished!  time: ")
+                setBegin(false);
+                console.log("stoping clock")
+                forceupdate();  
+                window.alert("game finished!  time: "+timeFinished)                                
             }
 
             setState2([
@@ -86,7 +90,11 @@ const GameFun = (props)=>{
             window.alert("2 ok")
             if((state2[0]===0.5)&&(state2[2]===0.5))
             {
-                window.alert("game finished!  time: ")
+                setBegin(false);
+                console.log("stoping clock")
+                forceupdate();  
+                window.alert("game finished!  time: "+timeFinished)                                
+                
             }
 
             setState2([
@@ -103,10 +111,11 @@ const GameFun = (props)=>{
             window.alert("3 ok")
             if((state2[0]===0.5)&&(state2[1]===0.5))
             {
-                setBegin(true);
-                forceupdate();
-                window.alert("game finished!  time: ")                
-                console.log("finishing")                
+                setBegin(false);
+                console.log("stoping clock");
+                forceupdate();  
+                window.alert("game finished!  time: "+timeFinished);                
+                console.log("finishing");                    
             }
 
             setState2([
@@ -121,20 +130,33 @@ const GameFun = (props)=>{
 
     const getTime=(e)=>{
         console.log(JSON.stringify(e));
+        setTimeFinished(JSON.stringify(e))
     }
 
     const start=()=>{
         setBegin(true);
-        console.log("Here")
+        console.log("starting clock")
         forceupdate();
     }
-    return(
+
+    
+    /**for test */
+    const end=()=>{
+        setBegin(false);
+        console.log("stoping clock")
+        forceupdate();
+    }
+
+    return(        
         <div className="gameClass">
           <img className="imageBody" src={require("../images/img"+(parseInt(props.value))+".webp")} alt="not found" onClick={(e)=>{getPoint(e);}}>                     
            </img>
            <ObjetiveSelector value={{selectorState}} getObjetive={(e)=>{getObjetive(e)}} />
            <Clock value={begin}  getTime={(e)=>getTime(e)}/>
-           <button className="buttonStart" onClick={start}>Start</button>
+           <div className='buttonsClock'>
+           <button id="buttonStart" className="buttonStart" onClick={start}>Start</button>
+           <button id="buttonEnd" className="buttonStart" onClick={end}>End</button>
+           </div>
            <div className='objetives'>
                 <div className="targetName">Objetive 1</div>
                 <div className="objetive"  style={{opacity: state2[0]}}>                

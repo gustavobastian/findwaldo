@@ -42,16 +42,22 @@ const Clock = (props)=>{
             setRunning(true);
         }
         else{
-        /*    props.getTime(time);*/
-
-            setTime({
-                'hour':0,
-                'minute':0,
-                'seconds':0,
-            })        
+            props.getTime(time);
+            const interval = setInterval(() => {
+                
+                setTime({
+                    'hour':0,
+                    'minute':0,
+                    'seconds':0,
+                }) 
+                
+            }, 1000);        
+            return () => clearInterval(interval);
+                 
         }
         
         if(running===true){
+            props.getTime(time);
             const interval = setInterval(() => update(), 1000);        
             return () => clearInterval(interval);
         }
